@@ -25,12 +25,10 @@ function App() {
     }
     console.log(data);
     fetch("http://192.168.1.195:8007/registration/register", {
-      method: "POST",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control_Allow-Orign": "*"
+        "Content-type": "application/x-www-form-urlencoded"
       },
+      method: "POST",
       body: JSON.stringify(data)
     })
       .then(response => {
@@ -39,28 +37,6 @@ function App() {
       .catch(error => {
         console.error(error);
       })
-
-    // try {
-    //   const res = await axios.post("http://192.168.1.195:8007/registration/register", {
-    //     method: "POST",
-    //     body: {
-    //       id: 45,
-    //       name: name,
-    //       city:"bhopal",
-    //     },
-    //   });
-
-    //   let resJson = await res.json();
-    //   if (res.status === 200) {
-    //     setName("");
-
-    //     setMessage("User created successfully");
-    //   } else {
-    //     setMessage("Some error occured");
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
 
 
   };
@@ -95,7 +71,7 @@ function App() {
             </form>
           </div>
           <div className='todocontainer'>
-            {res?.map((e) => (
+            {/* {res?.map((e) => (
               <div style={{ marginTop: "20px", width: "100%" }}>
                 <div className='todo' key={e.id} style={{ color: "black" }}>
                   Name is {e.name}{" "} City is {e.city}
@@ -107,7 +83,7 @@ function App() {
                 </div>
 
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
